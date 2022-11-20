@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns="/hello")
+@WebServlet(urlPatterns = "/hello")
 public class HelloWorldServlet extends HttpServlet {
 
-  @Override
-  protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-      PrintWriter out = resp.getWriter();
-      out.println("<html>");
-      out.println("<body>");
-      out.println("Hello World with Servlets");
-      out.println("</body>");
-      out.println("</html>");
+		PrintWriter out = resp.getWriter();
+		out.println("<html>");
+		out.println("<body>");
+		out.println("Hello World with Servlets");
+		out.println("</body>");
+		out.println("</html>");
 
-      System.out.println("Called HelloWorldServlet");
-  }
-}    
+		System.out.println("Called HelloWorldServlet");
+	}
+}

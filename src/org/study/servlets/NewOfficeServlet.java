@@ -1,8 +1,8 @@
 package org.study.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,8 +27,14 @@ public class NewOfficeServlet extends HttpServlet {
 		
 		Database db = new Database();
 		db.add(office);
-
-		PrintWriter out = resp.getWriter();
-		out.println("<html><body>New Office " + office.getName() + " saved!</body></html>");
+		
+		//PrintWriter out = resp.getWriter();
+		//out.println("<html><body>New Office " + office.getName() + " saved!</body></html>");
+		
+		//call the JSP
+        RequestDispatcher rd = req.getRequestDispatcher("/newOfficeAdded.jsp");
+        req.setAttribute("nameOffice", office.getName());
+        rd.forward(req, resp);
+		
 	}
 }
